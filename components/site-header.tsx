@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Image from "next/image"
-import { Menu, Car, Wrench, HelpCircle, FileText, Info } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
+import { Menu, Car, Wrench, HelpCircle, FileText, Info } from "lucide-react";
 
 export function SiteHeader() {
   const links = [
     { href: "/", label: "Beranda", icon: Car },
     { href: "/armada", label: "Armada", icon: Car },
-    { href: "#services", label: "Layanan", icon: Wrench },
+    { href: "/layanan", label: "Layanan", icon: Wrench },
     { href: "/faq", label: "FAQ", icon: HelpCircle },
     { href: "/blog", label: "Blog", icon: FileText },
     { href: "/About", label: "Tentang Kami", icon: Info },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 p-4">
@@ -29,13 +29,19 @@ export function SiteHeader() {
               height={20}
               className="h-5 w-5"
             />
-            <span className="font-semibold tracking-wide text-white">Sahabat Rentcar Nusa</span>
+            <span className="font-semibold tracking-wide text-white">
+              Sahabat Rentcar Nusa
+            </span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-purple-300 transition-colors">
+              <Link
+                key={l.href}
+                href={l.href}
+                className="hover:text-purple-300 transition-colors"
+              >
                 {l.label}
               </Link>
             ))}
@@ -49,7 +55,9 @@ export function SiteHeader() {
                          hover:bg-lime-300 hover:shadow-md hover:scale-[1.02]
                          transition-all"
             >
-              <Link href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20sewa%20mobil">Sewa Sekarang</Link>
+              <Link href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20sewa%20mobil">
+                Sewa Sekarang
+              </Link>
             </Button>
           </div>
 
@@ -66,7 +74,10 @@ export function SiteHeader() {
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="liquid-glass border-gray-800 p-0 w-64 flex flex-col">
+              <SheetContent
+                side="right"
+                className="liquid-glass border-gray-800 p-0 w-64 flex flex-col"
+              >
                 {/* Brand Header */}
                 <div className="flex items-center gap-1.5 px-4 py-4 border-b border-gray-800">
                   <Image
@@ -76,7 +87,9 @@ export function SiteHeader() {
                     height={24}
                     className="h-6 w-6"
                   />
-                  <span className="font-semibold tracking-wide text-white text-lg">Sahabat Rentcar</span>
+                  <span className="font-semibold tracking-wide text-white text-lg">
+                    Sahabat Rentcar
+                  </span>
                 </div>
 
                 {/* Nav Links */}
@@ -114,5 +127,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }

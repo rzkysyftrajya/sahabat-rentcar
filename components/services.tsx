@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { getWhatsAppUrl } from "@/lib/config";
-import { servicesData, additionalServicesData } from "@/lib/data/services";
+import { servicesData, additionalServicesData } from "@/components/services.ts";
 
 export function Services() {
   return (
